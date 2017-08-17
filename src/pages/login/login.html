@@ -1,0 +1,27 @@
+<ion-header no-border>
+  <ion-navbar transparent>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-slides pager="false" autoplay="2000" loop="true" speed="1500" effect="fade">
+    <ion-slide class="slide-background swiper-no-swiping" *ngFor="let background of backgrounds" [ngStyle]="{'background-image': 'url(' + background +')'}">
+    </ion-slide>
+  </ion-slides>
+  <div class="login-container">
+    
+    <!-- <img class="logo" src="assets/img/logo/logo-canon.png" /> -->
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <!--  -->
+      	{{error}}
+      <ion-item>            
+            <ion-input type="text" placeholder="Username" formControlName="username"></ion-input>
+      </ion-item>
+      <ion-item>            
+        <ion-input type="password"  placeholder="Password" formControlName="password" >
+        </ion-input>
+      </ion-item>
+      <button type="submit" ion-button margin color="primary" [disabled]="!loginForm.valid">LOGIN</button>
+      
+    </form>
+  </div>
+</ion-content>
