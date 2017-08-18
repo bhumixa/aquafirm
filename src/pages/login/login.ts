@@ -20,10 +20,11 @@ export class LoginPage {
 	loginForm: FormGroup;
 	error:any;
 	backgrounds = [
-	    "assets/images/background/background-1.jpg",
-	    "assets/images/background/background-2.jpg",
-	    "assets/images/background/background-3.jpg",
-	    "assets/images/background/background-4.jpg"
+	    "assets/images/background/1.jpg",
+	    "assets/images/background/2.jpg",
+	    "assets/images/background/3.jpg",
+	    "assets/images/background/4.jpg",
+	    "assets/images/background/6.jpg"
 	  ]
   	constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, private _AuthenticationserviceProvider: AuthenticationserviceProvider) {
   		
@@ -44,7 +45,8 @@ export class LoginPage {
 		this._AuthenticationserviceProvider.signInAquafirm(username, password).then(
       	(res) => {
        		if(res){
-       			this.navCtrl.push(HomePage);  
+       			this.navCtrl.push(HomePage)
+       			//this.navCtrl.push(HomePage,{ 'username':res.username , 'usertype':res.type});  
        		}else{
        			this.error = 'Please Check Username and Password.'
        		}

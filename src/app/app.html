@@ -1,16 +1,36 @@
-<ion-menu [content]="content">
+<ion-menu [content]="content" *ngIf="username" id="menu-avatar">
   <ion-header>
     <ion-toolbar>
-      <ion-title>Menu</ion-title>
+      <ion-title>Aquafirm</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <ion-content>
-    <ion-list>
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-        {{p.title}}
-      </button>
-    </ion-list>
+      <div class="profile-bg" [ngStyle]="{'background-image': 'url(assets/images/background/background-5.jpg)'}"></div>
+      <div class="menu-content" *ngIf="username">
+        <div class="profile-info" padding>
+          <img class="profile-image" src="assets/images/logo/user.png">
+          <h4 class="profile-name">{{username}} </h4> 
+          
+        </div>
+      </div>
+      
+      <hr/>
+      <ion-list no-lines *ngIf="username">
+        <span *ngFor="let p of pages">         
+           <button  menuClose="left" ion-item detail-none  (click)="openPage(p)">
+            <ion-icon  item-left></ion-icon>
+            {{p.title}}
+          </button>
+        </span>
+      </ion-list>
+      
+      <!-- <ion-list no-lines *ngIf="user | async">
+        <button menuClose="left" ion-item detail-none (click)="logout()">
+        <ion-icon name="log-out" item-left></ion-icon>
+          Logout
+        </button> 
+      </ion-list> -->
   </ion-content>
 
 </ion-menu>
