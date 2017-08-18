@@ -12,21 +12,29 @@ import {Observable} from 'rxjs/Observable';
 */
 @Injectable()
 export class AuthenticationserviceProvider {
-  headers = new Headers({ 'Content-Type': 'application/json' });
+  headers = new Headers({ 'Content-Type': 'application/json'});
 
   constructor(public http: Http) {
     console.log('Hello AuthenticationserviceProvider Provider');
   }
 
+  public convertResultToJson(result){
+    alert()
+  }
+  //action:'login','username':username, 'password':pwd
+  //http://192.168.0.183:8080/AquaFirm/JSONRequest?action=login&username=system&password=ok
+  // AquaFirm/JSONRequest?action=login&username=system&password=ok
+  //"proxyUrl": "http://ec2-18-220-159-231.us-east-2.compute.amazonaws.com:8080/AquaFirm"
   public signInAquafirm(username, pwd):any {
     return new Promise((resolve, reject) => {
-    	resolve(false)
       return this.http.
-        post('http://localhost:8080/AquaFirm/JSONRequest', JSON.stringify({action:'login','username':username, 'password':pwd}), {headers:this.headers})
+        post('AquaFirm/JSONRequest?action=login&username='+username+'&password='+pwd+'', JSON.stringify({}), {headers:this.headers})
         .toPromise()
       		.then(response => {
-	          if(response.json().token){
-	            resolve(response.json().token)
+            let res = JSON.stringify(response.json());            
+	          if(response.json().result != '-1'){
+              //this.convertResultToJson(response.json().result)
+	            resolve(response.json().result)
 	          }else{
 	            resolve(false)
 	          }

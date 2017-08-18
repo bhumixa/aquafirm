@@ -38,18 +38,18 @@ export class LoginPage {
 	}
 
 	login(){ 
+		this.error = '';
 		const username = this.loginForm.controls.username.value; 
 		const password = this.loginForm.controls.password.value; 
 		this._AuthenticationserviceProvider.signInAquafirm(username, password).then(
-          (res) => {
-           if(res){
-           		this.navCtrl.push(HomePage);  
-           }else{
-           	this.error = 'haskj'
-           }
-        },
-          (err) => console.error(err)
-        ); 
-		//this.navCtrl.push(HomePage);  	
+      	(res) => {
+       		if(res){
+       			this.navCtrl.push(HomePage);  
+       		}else{
+       			this.error = 'Please Check Username and Password.'
+       		}
+    	},
+      		(err) => console.error(err)
+    	); 	
 	}
 }

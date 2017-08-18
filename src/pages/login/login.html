@@ -7,12 +7,10 @@
     <ion-slide class="slide-background swiper-no-swiping" *ngFor="let background of backgrounds" [ngStyle]="{'background-image': 'url(' + background +')'}">
     </ion-slide>
   </ion-slides>
-  <div class="login-container">
-    
-    <!-- <img class="logo" src="assets/img/logo/logo-canon.png" /> -->
+  <div class="login-container">    
+    <!-- <img class="logo" src="assets/images/logo/logo-canon.png" /> -->
     <form [formGroup]="loginForm" (ngSubmit)="login()">
-      <!--  -->
-      	{{error}}
+      <span class="error" ng-if="error"> {{error}} </span>     
       <ion-item>            
             <ion-input type="text" placeholder="Username" formControlName="username"></ion-input>
       </ion-item>
