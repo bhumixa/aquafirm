@@ -7,7 +7,7 @@
   },
   "proxies": [
 	    {
-	        "path": "/AquaFirm",
+	        "path": "/aFirm",
 	        "proxyUrl": "http://ec2-18-220-159-231.us-east-2.compute.amazonaws.com:8080/AquaFirm" 
 	    }
 	]

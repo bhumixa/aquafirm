@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { HomePage } from '../../pages/home/home';
 import { AuthenticationserviceProvider } from '../../providers/authenticationservice/authenticationservice';
-
+import { Loader } from "../../providers/loader/loader";
 /**
  * Generated class for the LoginPage page.
  *
@@ -26,7 +26,7 @@ export class LoginPage {
 	    "assets/images/background/4.jpg",
 	    "assets/images/background/6.jpg"
 	  ]
-  	constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, private _AuthenticationserviceProvider: AuthenticationserviceProvider) {
+  	constructor(public navCtrl: NavController, private loader: Loader, public navParams: NavParams, private formBuilder: FormBuilder, private _AuthenticationserviceProvider: AuthenticationserviceProvider) {
   		
   	}
 
@@ -39,16 +39,19 @@ export class LoginPage {
 	}
 
 	login(){ 
+		this.loader.show('Please Wait');
 		this.error = '';
 		const username = this.loginForm.controls.username.value; 
 		const password = this.loginForm.controls.password.value; 
 		this._AuthenticationserviceProvider.signInAquafirm(username, password).then(
       	(res) => {
        		if(res){
+       			this.loader.hide(); 
        			this.navCtrl.push(HomePage)
        			//this.navCtrl.push(HomePage,{ 'username':res.username , 'usertype':res.type});  
        		}else{
-       			this.error = 'Please Check Username and Password.'
+       			this.loader.hide(); 
+       			this.error = 'Invalid Username and Password.'
        		}
     	},
       		(err) => console.error(err)

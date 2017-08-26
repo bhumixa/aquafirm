@@ -65,7 +65,7 @@ export class AuthenticationserviceProvider {
   public signInAquafirm(username, pwd):any {
     return new Promise((resolve, reject) => {
       return this.http.
-        post('AquaFirm/JSONRequest?action=login&username='+username+'&password='+pwd+'', JSON.stringify({}), {headers:this.headers})
+        post('/aFirm/JSONRequest?action=login&username='+username+'&password='+pwd+'', JSON.stringify({}), {headers:this.headers})
         .toPromise()
       		.then(response => {
             let res = JSON.stringify(response.json());            

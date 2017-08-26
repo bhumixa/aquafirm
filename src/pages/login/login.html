@@ -8,17 +8,17 @@
     </ion-slide>
   </ion-slides>
   <div class="login-container">    
-    <!-- <img class="logo" src="assets/images/logo/logo-canon.png" /> -->
+    <img class="logo" src="assets/images/logo/NEER_2.png" height="80"  />
     <form [formGroup]="loginForm" (ngSubmit)="login()">
       <span class="error" ng-if="error"> {{error}} </span>     
       <ion-item>            
-            <ion-input type="text" value="bhumi" placeholder="Username" formControlName="username"></ion-input>
+            <ion-input type="text"  placeholder="Username" formControlName="username"></ion-input>
       </ion-item>
       <ion-item>            
-        <ion-input type="password" value="123" placeholder="Password" formControlName="password" >
+        <ion-input type="password" placeholder="Password" formControlName="password" >
         </ion-input>
       </ion-item>
-      <button type="submit" ion-button margin color="primary" [disabled]="!loginForm.valid">LOGIN</button>
+      <button type="submit" ion-button margin color="primary" [disabled]="!loginForm.valid" >LOGIN</button>
       
     </form>
   </div>
