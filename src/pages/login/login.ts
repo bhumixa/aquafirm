@@ -47,7 +47,7 @@ export class LoginPage {
       	(res) => {
        		if(res){
        			this.loader.hide(); 
-       			this.navCtrl.push(HomePage)
+       			this.navCtrl.setRoot(HomePage)
        			//this.navCtrl.push(HomePage,{ 'username':res.username , 'usertype':res.type});  
        		}else{
        			this.loader.hide(); 

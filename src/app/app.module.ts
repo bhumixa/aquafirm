@@ -7,7 +7,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
-
+import { AccountPage } from '../pages/account/account';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AuthenticationserviceProvider } from '../providers/authenticationservice/authenticationservice';
@@ -17,7 +17,8 @@ import { Loader } from '../providers/loader/loader';
   declarations: [
     MyApp,
     HomePage,
-    LoginPage
+    LoginPage,
+    AccountPage
   ],
   imports: [
     BrowserModule,
@@ -28,7 +29,8 @@ import { Loader } from '../providers/loader/loader';
   entryComponents: [
     MyApp,
     HomePage,
-    LoginPage
+    LoginPage,
+    AccountPage
   ],
   providers: [
     StatusBar,
