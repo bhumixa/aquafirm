@@ -36,27 +36,28 @@ export class MyApp {
       "category":"Account",
       "subs": [
         {
-          "subcategory":"Account"          
+          "subcategory":"Purchase"
         },
         {
-          "subcategory":"sub",
-          "manufactures": [
-            {
-              "manufacture":"Home"
-            },
-            {
-              "manufacture":"2.2"
-            },
-            {
-              "manufacture":"2.3"
-            },
-            {
-              "manufacture":"2.4"
-            }
-          ]
+          "subcategory":"Sale"
+        },
+        {
+          "subcategory":"Opening"
+        },
+        {
+          "subcategory":"Physical Stock"
+        }
+      ]
+    },
+    {
+      "category":"Production",
+      "subs": [
+        {
+          "subcategory":"Aquaculture"          
         }
       ]
     }
+
   ]
 
     this._AuthenticationserviceProvider.getChangedValue().subscribe(uname => { 

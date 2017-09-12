@@ -20,7 +20,7 @@
         <ion-item *ngFor="let p of pages; let i=index" text-wrap (click)="toggleLevel1('idx'+i)" [ngClass]="{active: isLevel1Shown('idx'+i)}">
           <h4>            
             <span  *ngIf="!p.subs" menuClose="left" (click)="openPage(p.category)">
-              <ion-icon  item-left></ion-icon>
+              
               {{p.category}}
             </span>
             <span *ngIf="p.subs"> {{p.category}}  </span>
@@ -29,8 +29,8 @@
           <ion-list *ngIf="isLevel1Shown('idx'+i)">
             <ion-item *ngFor="let s of p.subs; let i2=index" text-wrap (click)="toggleLevel2('idx'+i+'idx'+i2)" [ngClass]="{active: isLevel2Shown('idx'+i+'idx'+i2)}">
               <h4>                
-                <span  *ngIf="!s.manufactures" menuClose="left" ion-item detail-none  (click)="openPage(s.subcategory)">
-                  <ion-icon  item-left></ion-icon>
+                <span  *ngIf="!s.manufactures" menuClose="left"  detail-none  (click)="openPage(s.subcategory)">
+                  
                   {{s.subcategory}}
                 </span>
                 <span *ngIf="s.manufactures"> {{s.subcategory}} </span>
@@ -38,8 +38,8 @@
               </h4>
               <ion-list *ngIf="isLevel2Shown('idx'+i+'idx'+i2)">
                 <ion-item *ngFor="let m of s.manufactures" text-wrap>                  
-                  <span  menuClose="left" ion-item detail-none  (click)="openPage(m.manufacture)">
-                    <ion-icon  item-left></ion-icon>
+                  <span  menuClose="left" detail-none  (click)="openPage(m.manufacture)">
+                    
                     {{m.manufacture}}
                   </span>
                 </ion-item>
