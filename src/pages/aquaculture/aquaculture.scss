@@ -1,0 +1,18 @@
+page-aquaculture {
+	.bg-Plan{
+		background-color: map-get($bluegray-lightgreen, Plan);
+	}
+	.bg-Pumping{
+		background-color: map-get($bluegray-lightgreen, Pumping);
+	}
+	.bg-Preparation{
+		background-color: map-get($bluegray-lightgreen, Preparation);
+	}
+	.bg-Stocking{
+		background-color: map-get($bluegray-lightgreen, Stocking);
+	}
+	.list-card{
+		height:80px;
+		padding:30px
+	}
+}

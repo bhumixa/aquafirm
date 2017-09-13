@@ -7,6 +7,8 @@ import { AuthenticationserviceProvider } from '../providers/authenticationservic
 import { HomePage } from '../pages/home/home';
 import { AccountPage } from '../pages/account/account';
 import { LoginPage } from '../pages/login/login';
+import { AquaculturePage } from '../pages/aquaculture/aquaculture';
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -109,6 +111,8 @@ export class MyApp {
       this.component = HomePage
     }else if(page == 'Account'){
       this.component = AccountPage
+    }else if(page == 'Aquaculture'){
+      this.component = AquaculturePage    
     }else{
       this.component = HomePage
     }

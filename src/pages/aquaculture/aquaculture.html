@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar >
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Aquaculture</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content >
+	<ion-card *ngFor="let list of cardList" (click)="openSheet(list.name)"  >
+	  <ion-card-content class="bg-{{list.name}} list-card" >
+	   	<ion-icon name="{{list.icon}}" item-start></ion-icon> {{list.name}}
+	  </ion-card-content>
+	</ion-card>
+	<!-- <ion-card>
+	  <ion-card-content class="bg-Pumping">
+	    <ion-icon name="water" item-start></ion-icon> Pumping
+	  </ion-card-content>
+	</ion-card>
+	<ion-card>
+	  <ion-card-content class="bg-Preparation">
+	    <ion-icon name="list-box" item-start></ion-icon> Preparation
+	  </ion-card-content>
+	</ion-card>
+	<ion-card>
+	  <ion-card-content class="bg-Stocking">
+	    <ion-icon name="analytics" item-start></ion-icon> Stocking
+	  </ion-card-content>
+	</ion-card> -->
+</ion-content>

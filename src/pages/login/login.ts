@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { HomePage } from '../../pages/home/home';
+import { AquaculturePage } from '../../pages/aquaculture/aquaculture';
 import { AuthenticationserviceProvider } from '../../providers/authenticationservice/authenticationservice';
 import { Loader } from "../../providers/loader/loader";
 /**
@@ -47,7 +48,7 @@ export class LoginPage {
       	(res) => {
        		if(res){
        			this.loader.hide(); 
-       			this.navCtrl.setRoot(HomePage)
+       			this.navCtrl.setRoot(AquaculturePage)
        			//this.navCtrl.push(HomePage,{ 'username':res.username , 'usertype':res.type});  
        		}else{
        			this.loader.hide(); 

@@ -8,17 +8,23 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { AccountPage } from '../pages/account/account';
+import { AquaculturePage } from '../pages/aquaculture/aquaculture';
+import { SheetDetailsPage } from '../pages/sheet-details/sheet-details';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AuthenticationserviceProvider } from '../providers/authenticationservice/authenticationservice';
 import { Loader } from '../providers/loader/loader';
+import { OpenmenuComponent } from '../components/openmenu/openmenu';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     LoginPage,
-    AccountPage
+    AccountPage,
+    AquaculturePage,
+    SheetDetailsPage,
+    OpenmenuComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +36,9 @@ import { Loader } from '../providers/loader/loader';
     MyApp,
     HomePage,
     LoginPage,
-    AccountPage
+    AccountPage,
+    AquaculturePage,
+    SheetDetailsPage
   ],
   providers: [
     StatusBar,
