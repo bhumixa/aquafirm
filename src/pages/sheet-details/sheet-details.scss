@@ -1,3 +1,18 @@
 page-sheet-details {
-
+	.cell{
+		border: 1px solid gray;
+    	padding: 5px;
+    	display: block;
+	    flex: 1 1 0;	    
+	    margin: 0;
+	    overflow: hidden;
+	    text-overflow: ellipsis;
+	    white-space: nowrap;
+	    font-size: 10px;
+	}
+	.row-table-header{
+	}
+	.index{
+		width:30px
+	}
 }

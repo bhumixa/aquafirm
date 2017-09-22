@@ -5,8 +5,179 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-
+<ion-content >
+	<div *ngIf="action=='Plan'">
+		<ion-grid>
+		  <ion-row class="row-table-header">
+		    <div class="index cell"> </div>
+		    <ion-col class="cell">
+		      Plan No
+		    </ion-col>
+		    <ion-col class="cell">
+		       Plan Id
+		    </ion-col>
+		    <ion-col class="cell">
+		       Start Date
+		    </ion-col>
+		    <ion-col class="cell">
+		      End Date
+		    </ion-col>
+		    <ion-col class="cell">
+		      Status
+		    </ion-col>
+		  </ion-row>
+		  <ion-row>
+		    <ion-col>
+		      1 of 3
+		    </ion-col>
+		    <ion-col>
+		      2 of 3
+		    </ion-col>
+		    <ion-col>
+		      3 of 3
+		    </ion-col>
+		  </ion-row>
+		</ion-grid>
+	</div>
+	<div *ngIf="action=='Pumping'">
+		<ion-grid>
+		  <ion-row class="row-table-header">
+		    <div class="index cell"> </div>
+		    <ion-col class="cell">
+		     	Pond No
+		    </ion-col>
+		    <!-- <ion-col class="cell">
+		    	Plan Id
+		    </ion-col> -->
+		    <ion-col class="cell">
+		    	Started
+		    </ion-col>
+		    <ion-col class="cell">
+		     	Pumping Started
+		    </ion-col>
+		    <ion-col class="cell">
+		     	Pumping Stopped
+		    </ion-col>
+		    <ion-col class="cell">
+		     	Bleaching
+		    </ion-col>
+		    <ion-col class="cell">
+		     	Status
+		    </ion-col>
+		  </ion-row>
+		  <ion-row>
+		    <ion-col>
+		      1 of 3
+		    </ion-col>
+		    <ion-col>
+		      2 of 3
+		    </ion-col>
+		    <ion-col>
+		      3 of 3
+		    </ion-col>
+		  </ion-row>
+		</ion-grid>
+	</div>
+	<div *ngIf="action=='Preparation'">
+		<ion-grid>
+		  <ion-row class="row-table-header">
+		    <div class="index cell"> </div>
+		    <ion-col class="cell">
+		     	Pond No
+		    </ion-col>
+		    <ion-col class="cell">
+		    	Plan Id
+		    </ion-col>
+		    <ion-col class="cell">
+		    	Plan Started
+		    </ion-col>		    
+		    <ion-col class="cell">
+		     	Bleaching
+		    </ion-col>
+		    <ion-col class="cell">
+		     	Qty. Used
+		    </ion-col>
+		    <ion-col class="cell">
+		     	Status
+		    </ion-col>
+		  </ion-row>
+		  <ion-row>
+		    <ion-col>
+		      1 of 3
+		    </ion-col>
+		    <ion-col>
+		      2 of 3
+		    </ion-col>
+		    <ion-col>
+		      3 of 3
+		    </ion-col>
+		  </ion-row>
+		</ion-grid>
+	</div>
+	<div *ngIf="action=='Stocking'">
+		<ion-grid>
+		  <ion-row class="row-table-header">
+		    <div class="index cell"> </div>
+		    <ion-col class="cell">
+		     	Pond No
+		    </ion-col>
+		    <ion-col class="cell">
+		    	Started
+		    </ion-col>		    
+		    <ion-col class="cell">
+		     	Stock Date
+		    </ion-col>
+		    <ion-col class="cell">
+		     	Type
+		    </ion-col>
+		    <ion-col class="cell">
+		     	Qty.
+		    </ion-col>
+		    <ion-col class="cell">
+		     	PL Stock
+		    </ion-col>
+		    <ion-col class="cell">
+		     	Hup. Sur.
+		    </ion-col>
+		    <ion-col class="cell">
+		     	To. Sur.
+		    </ion-col>
+		    <ion-col class="cell">
+		     	Status
+		    </ion-col>
+		  </ion-row>
+		  <ion-row>
+		  	<div class="index cell"> </div>
+		    <ion-col>
+		      1 of 3
+		    </ion-col>
+		    <ion-col>
+		      2 of 3
+		    </ion-col>
+		    <ion-col>
+		      3 of 3
+		    </ion-col>
+		    <ion-col>
+		      4 of 3
+		    </ion-col>
+		    <ion-col>
+		      5 of 3
+		    </ion-col>
+		    <ion-col>
+		      6 of 3
+		    </ion-col>
+		    <ion-col>
+		      7 of 3
+		    </ion-col>
+		    <ion-col>
+		      8 of 3
+		    </ion-col>
+		    <ion-col>
+		      9 of 3
+		    </ion-col>
+		  </ion-row>
+		</ion-grid>
+	</div>
     <ion-fab bottom right> 
        <openmenu> </openmenu>
     </ion-fab>
