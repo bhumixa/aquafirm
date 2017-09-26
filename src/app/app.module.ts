@@ -9,6 +9,7 @@ import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { AccountPage } from '../pages/account/account';
 import { AquaculturePage } from '../pages/aquaculture/aquaculture';
+import { AddnewPage } from '../pages/addnew/addnew';
 import { SheetDetailsPage } from '../pages/sheet-details/sheet-details';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -22,6 +23,7 @@ import { OpenmenuComponent } from '../components/openmenu/openmenu';
     HomePage,
     LoginPage,
     AccountPage,
+    AddnewPage,
     AquaculturePage,
     SheetDetailsPage,
     OpenmenuComponent
@@ -37,6 +39,7 @@ import { OpenmenuComponent } from '../components/openmenu/openmenu';
     HomePage,
     LoginPage,
     AccountPage,
+    AddnewPage,
     AquaculturePage,
     SheetDetailsPage
   ],

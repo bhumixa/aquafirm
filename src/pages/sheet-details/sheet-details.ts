@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { AddnewPage } from '../../pages/addnew/addnew';
 
 /**
  * Generated class for the SheetDetailsPage page.
@@ -25,6 +26,12 @@ export class SheetDetailsPage {
   onLoad(){
     
   	
+  }
+
+  addNew(){
+    this.navCtrl.push(AddnewPage, {
+        action: this.action
+    });
   }
 
   ngOnInit(){

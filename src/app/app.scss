@@ -58,8 +58,14 @@
 	    margin-top: 150px;
 	    padding-top: 70px;
 	    text-align: center;
-	  }
+	}
 
+}
+.pull-right{
+	float:right !important;
+}
+.pull-left{
+	float:left !important;
 }
 .myview {
    background-image: url('../assets/images/background/background-1.jpg') no-repeat center center fixed; 

@@ -8,6 +8,7 @@ import { HomePage } from '../pages/home/home';
 import { AccountPage } from '../pages/account/account';
 import { LoginPage } from '../pages/login/login';
 import { AquaculturePage } from '../pages/aquaculture/aquaculture';
+import { AddnewPage } from '../pages/addnew/addnew';
 
 @Component({
   templateUrl: 'app.html'
@@ -15,7 +16,7 @@ import { AquaculturePage } from '../pages/aquaculture/aquaculture';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
   username:any;
-  rootPage: any = LoginPage;
+  rootPage: any =  LoginPage;
   showLevel1 = null;
   showLevel2 = null;
   pages:  any ; //Array<{title: string, component: any}>;

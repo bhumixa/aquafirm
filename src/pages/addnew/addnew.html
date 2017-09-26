@@ -1,0 +1,263 @@
+<ion-header>
+  <ion-toolbar >     
+     <ion-title text-center>
+      	Add New {{action}}
+     </ion-title> 
+ </ion-toolbar>
+</ion-header>
+
+
+<ion-content >
+	<div *ngIf="action=='Plan'">
+		<form [formGroup]="planFormBuilder" (submit)="savePlan()" novalidate> 
+			<ion-item> 
+				<ion-label >Pond No : </ion-label>
+				<ion-input formControlName="pondNo" type="text" placeholder=""
+		       			 [class.invalid]="!planFormBuilder.controls.pondNo.valid && planFormBuilder.controls.pondNo.dirty"> 
+		    	</ion-input>
+			</ion-item>
+			<ion-item> 
+				<ion-label >Start Date: </ion-label>
+				<ion-input formControlName="startDate" type="text" placeholder=""
+		       			 [class.invalid]="!planFormBuilder.controls.startDate.valid && planFormBuilder.controls.startDate.dirty"> 
+		    	</ion-input>
+			</ion-item>
+			<ion-item> 
+				<ion-label >Plan Id: </ion-label>
+				<ion-input formControlName="planId" type="text" placeholder=""
+		       			 [class.invalid]="!planFormBuilder.controls.planId.valid && planFormBuilder.controls.planId.dirty"> 
+		    	</ion-input>
+			</ion-item>
+			<ion-item> 
+				<ion-label >Serial No: </ion-label>
+				<ion-input formControlName="serialNo" type="text" placeholder=""
+		       			 [class.invalid]="!planFormBuilder.controls.serialNo.valid && planFormBuilder.controls.serialNo.dirty" disable> 
+		    	</ion-input>
+			</ion-item>
+			<ion-item> 
+				<ion-label >Remark: </ion-label>
+				<ion-textarea formControlName="remark" placeholder=""
+		       			 [class.invalid]="!planFormBuilder.controls.remark.valid && planFormBuilder.controls.remark.dirty"> </ion-textarea>
+				
+			</ion-item>
+			<ion-grid>
+			  <ion-row justify-content-center>
+			    <ion-col col-3>
+			     	<button ion-button color="secondary" type="submit" full>Save</button>	
+			    </ion-col>
+			    <ion-col col-3>
+			     	<button ion-button color="secondary" type="button" full (click)="cancel()">Cancel</button>	
+			    </ion-col>
+			  </ion-row>			  
+			</ion-grid>
+		</form>		
+	</div>
+	<div *ngIf="action=='Pumping'">
+		<form [formGroup]="pumpingFormBuilder" (submit)="savePumping()" novalidate> 
+			<ion-item> 
+				<ion-label >Pond No : </ion-label>
+				<ion-input formControlName="pondNo" type="text" placeholder=""
+		       			 [class.invalid]="!pumpingFormBuilder.controls.pondNo.valid && pumpingFormBuilder.controls.pondNo.dirty"> 
+		    	</ion-input>
+			</ion-item>
+			<ion-item> 
+				<ion-label >Plan Started: </ion-label>
+				<ion-input formControlName="planStarted" type="text" placeholder=""
+		       			 [class.invalid]="!pumpingFormBuilder.controls.planStarted.valid && pumpingFormBuilder.controls.planStarted.dirty"> 
+		    	</ion-input>
+			</ion-item>
+			<ion-item> 
+				<ion-label >Pumping Started: </ion-label>
+				<ion-input formControlName="pumpingStarted" type="text" placeholder=""
+		       			 [class.invalid]="!pumpingFormBuilder.controls.pumpingStarted.valid && pumpingFormBuilder.controls.pumpingStarted.dirty"> 
+		    	</ion-input>
+			</ion-item>
+			<ion-item> 
+				<ion-label >Pumping Stopped: </ion-label>
+				<ion-input formControlName="pumpingStopped" type="text" placeholder=""
+		       			 [class.invalid]="!pumpingFormBuilder.controls.pumpingStopped.valid && pumpingFormBuilder.controls.pumpingStopped.dirty" disable> 
+		    	</ion-input>
+			</ion-item>
+			<ion-item> 
+				<ion-label >Bleaching: </ion-label>
+				<ion-input formControlName="bleaching" type="text" placeholder=""
+		       			 [class.invalid]="!pumpingFormBuilder.controls.bleaching.valid && pumpingFormBuilder.controls.bleaching.dirty" disable> 
+		    	</ion-input>
+			</ion-item>
+			<ion-item> 
+				<ion-label >Remark: </ion-label>
+				<ion-textarea formControlName="remark" placeholder=""
+		       			 [class.invalid]="!planFormBuilder.controls.remark.valid && planFormBuilder.controls.remark.dirty"> </ion-textarea>
+				
+			</ion-item>
+			<ion-grid>
+			  <ion-row justify-content-center>
+			    <ion-col col-3>
+			     	<button ion-button color="secondary" type="submit" full>Save</button>	
+			    </ion-col>
+			    <ion-col col-3>
+			     	<button ion-button color="secondary" type="button" full (click)="cancel()">Cancel</button>	
+			    </ion-col>
+			  </ion-row>			  
+			</ion-grid>
+		</form>		
+	</div>
+	<div *ngIf="action=='Preparation'">
+		<div class="pull-right">
+			<button  ion-button (click)="addItem()" >Add Item</button>
+		</div>
+		<form [formGroup]="preparationFormBuilder" (submit)="savePreparation()" novalidate> 
+			<ion-item> 
+				<ion-label >Pond No : </ion-label>
+				<ion-input formControlName="pondNo" type="text" placeholder=""
+		       			 [class.invalid]="!preparationFormBuilder.controls.pondNo.valid && preparationFormBuilder.controls.pondNo.dirty"> 
+		    	</ion-input>
+			</ion-item>
+			<ion-item> 
+				<ion-label >Bleaching : </ion-label>
+				<ion-input formControlName="bleaching" type="text" placeholder=""
+		       			 [class.invalid]="!preparationFormBuilder.controls.bleaching.valid && preparationFormBuilder.controls.bleaching.dirty"> 
+		    	</ion-input>
+			</ion-item>
+			<ion-grid>
+			  <ion-row justify-content-center>
+			    <ion-col col-3>
+			     	<button ion-button color="secondary" type="submit" full>Save</button>	
+			    </ion-col>
+			    <ion-col col-3>
+			     	<button ion-button color="secondary" type="button" full (click)="cancel()">Cancel</button>	
+			    </ion-col>
+			  </ion-row>			  
+			</ion-grid>
+		</form>
+		<ion-grid>
+		  <ion-row class="row-table-header">
+		    <ion-col class="cell">
+		     	Date
+		    </ion-col>
+		    <ion-col class="cell">
+		     	Item
+		    </ion-col>
+		    <ion-col class="cell">
+		     	Qty
+		    </ion-col>
+		    <ion-col class="cell">
+		     	Unit
+		    </ion-col>
+		  </ion-row>
+		  <ion-row>
+		    <ion-col>
+		      1 of 4
+		    </ion-col>
+		    <ion-col>
+		      2 of 4
+		    </ion-col>
+		    <ion-col>
+		      4 of 4
+		    </ion-col>
+		    <ion-col>
+		      4 of 4
+		    </ion-col>
+		  </ion-row>
+		</ion-grid>
+	</div>
+
+	<div *ngIf="action=='Stocking'">
+		<div class="pull-right">
+			<button  ion-button (click)="addStocking()" >Add Stocking</button>
+		</div>
+		<form [formGroup]="stockingFormBuilder" (submit)="saveStocking()" novalidate> 
+			<ion-item> 
+				<ion-label >Pond No : </ion-label>
+				<ion-input formControlName="pondNo" type="text" placeholder=""
+		       			 [class.invalid]="!stockingFormBuilder.controls.pondNo.valid && stockingFormBuilder.controls.pondNo.dirty"> 
+		    	</ion-input>
+		    </ion-item>
+		    <ion-item> 
+		    	<ion-label >Bleaching : </ion-label>
+				<ion-input formControlName="bleaching" type="text" placeholder=""
+		       			 [class.invalid]="!stockingFormBuilder.controls.bleaching.valid && stockingFormBuilder.controls.bleaching.dirty"> 
+		    	</ion-input>
+		    </ion-item>
+		    <ion-item> 
+		    	<ion-label >Stocking Date : </ion-label>
+				<ion-input formControlName="stockingDate" type="text" placeholder=""
+		       			 [class.invalid]="!stockingFormBuilder.controls.stockingDate.valid && stockingFormBuilder.controls.stockingDate.dirty"> 
+		    	</ion-input>
+		    </ion-item>
+		    <ion-item> 
+		    	<ion-label >PL Type: </ion-label>
+				<ion-input formControlName="plType" type="text" placeholder=""
+		       			 [class.invalid]="!stockingFormBuilder.controls.plType.valid && stockingFormBuilder.controls.plType.dirty"> 
+		    	</ion-input>
+		    </ion-item>
+		    <ion-item> 
+		    	<ion-label >Stocking Qty: </ion-label>
+				<ion-input formControlName="stockingQty" type="text" placeholder=""
+		       			 [class.invalid]="!stockingFormBuilder.controls.stockingQty.valid && stockingFormBuilder.controls.stockingQty.dirty"> 
+		    	</ion-input>
+		    </ion-item>
+		    <ion-item> 
+		    	<ion-label >Per Bag Received: </ion-label>
+				<ion-input formControlName="perBagRecv" type="text" placeholder=""
+		       			 [class.invalid]="!stockingFormBuilder.controls.perBagRecv.valid && stockingFormBuilder.controls.perBagRecv.dirty"> 
+		    	</ion-input>
+		    </ion-item>
+		    <ion-item> 
+		    	<ion-label >Total PL STock: </ion-label>
+				<ion-input formControlName="totalPl" type="text" placeholder=""
+		       			 [class.invalid]="!stockingFormBuilder.controls.totalPl.valid && stockingFormBuilder.controls.totalPl.dirty"> 
+		    	</ion-input>
+		    </ion-item>
+		    <ion-item> 
+		    	<ion-label >Tray Count: </ion-label>
+				<ion-input formControlName="trayCount" type="text" placeholder=""
+		       			 [class.invalid]="!stockingFormBuilder.controls.trayCount.valid && stockingFormBuilder.controls.trayCount.dirty"> 
+		    	</ion-input>
+		    </ion-item>
+		    <ion-item> 
+		    	<ion-label >Happa Survival On: </ion-label>
+				<ion-input formControlName="happaSurvlOn" type="text" placeholder=""
+		       			 [class.invalid]="!stockingFormBuilder.controls.happaSurvlOn.valid && stockingFormBuilder.controls.happaSurvlOn.dirty"> 
+		    	</ion-input>
+		    </ion-item>
+		    <ion-item> 
+		    	<ion-label > Survival Tray Count: </ion-label>
+				<ion-input formControlName="survTrayCount" type="text" placeholder=""
+		       			 [class.invalid]="!stockingFormBuilder.controls.survTrayCount.valid && stockingFormBuilder.controls.survTrayCount.dirty"> 
+		    	</ion-input>
+		    </ion-item>
+		    <ion-item> 
+		    	<ion-label >Happa Survival : </ion-label>
+				<ion-input formControlName="happaSurvl" type="text" placeholder=""
+		       			 [class.invalid]="!stockingFormBuilder.controls.happaSurvl.valid && stockingFormBuilder.controls.happaSurvl.dirty"> 
+		    	</ion-input>
+		    </ion-item>
+		    <ion-item> 
+		    	<ion-label >Total Survival: </ion-label>
+				<ion-input formControlName="totalSurvl" type="text" placeholder=""
+		       			 [class.invalid]="!stockingFormBuilder.controls.totalSurvl.valid && stockingFormBuilder.controls.totalSurvl.dirty"> 
+		    	</ion-input>
+		    </ion-item>
+		    <ion-item> 
+		    	<ion-label >Density: </ion-label>
+				<ion-input formControlName="density" type="text" placeholder=""
+		       			 [class.invalid]="!stockingFormBuilder.controls.density.valid && stockingFormBuilder.controls.density.dirty"> 
+		    	</ion-input>
+			</ion-item>
+			<ion-grid>
+			  <ion-row justify-content-center>
+			    <ion-col col-3>
+			     	<button ion-button color="secondary" type="submit" full>Save</button>	
+			    </ion-col>
+			    <ion-col col-3>
+			     	<button ion-button color="secondary" type="button" full (click)="cancel()">Cancel</button>	
+			    </ion-col>
+			  </ion-row>			  
+			</ion-grid>
+		</form>
+	</div>
+	<ion-fab bottom right> 
+       <openmenu> </openmenu>
+    </ion-fab>
+</ion-content>
