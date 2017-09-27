@@ -16,6 +16,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { AuthenticationserviceProvider } from '../providers/authenticationservice/authenticationservice';
 import { Loader } from '../providers/loader/loader';
 import { OpenmenuComponent } from '../components/openmenu/openmenu';
+import { DataserviceProvider } from '../providers/dataservice/dataservice';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { OpenmenuComponent } from '../components/openmenu/openmenu';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthenticationserviceProvider,
-    Loader
+    Loader,
+    DataserviceProvider
   ]
 })
 export class AppModule {}

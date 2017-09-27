@@ -16,7 +16,7 @@ import { AddnewPage } from '../pages/addnew/addnew';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
   username:any;
-  rootPage: any =  LoginPage;
+  rootPage: any =  AquaculturePage;
   showLevel1 = null;
   showLevel2 = null;
   pages:  any ; //Array<{title: string, component: any}>;

@@ -8,6 +8,7 @@
 
 
 <ion-content >
+	
 	<div *ngIf="action=='Plan'">
 		<form [formGroup]="planFormBuilder" (submit)="savePlan()" novalidate> 
 			<ion-item> 
@@ -18,9 +19,11 @@
 			</ion-item>
 			<ion-item> 
 				<ion-label >Start Date: </ion-label>
-				<ion-input formControlName="startDate" type="text" placeholder=""
+				<ion-datetime displayFormat="MM/DD/YYYY" pickerFormat="DD MMMM YYYY" formControlName="startDate" ></ion-datetime>
+				<!-- <ion-input formControlName="startDate" type="text" placeholder=""
 		       			 [class.invalid]="!planFormBuilder.controls.startDate.valid && planFormBuilder.controls.startDate.dirty"> 
-		    	</ion-input>
+		    	</ion-input> -->
+
 			</ion-item>
 			<ion-item> 
 				<ion-label >Plan Id: </ion-label>
@@ -62,21 +65,24 @@
 			</ion-item>
 			<ion-item> 
 				<ion-label >Plan Started: </ion-label>
-				<ion-input formControlName="planStarted" type="text" placeholder=""
+				<!-- <ion-input formControlName="planStarted" type="text" placeholder=""
 		       			 [class.invalid]="!pumpingFormBuilder.controls.planStarted.valid && pumpingFormBuilder.controls.planStarted.dirty"> 
-		    	</ion-input>
+		    	</ion-input> -->
+		    	<ion-datetime displayFormat="MM/DD/YYYY" pickerFormat="DD MMMM YYYY" formControlName="planStarted" ></ion-datetime>
 			</ion-item>
 			<ion-item> 
 				<ion-label >Pumping Started: </ion-label>
-				<ion-input formControlName="pumpingStarted" type="text" placeholder=""
+				<!-- <ion-input formControlName="pumpingStarted" type="text" placeholder=""
 		       			 [class.invalid]="!pumpingFormBuilder.controls.pumpingStarted.valid && pumpingFormBuilder.controls.pumpingStarted.dirty"> 
-		    	</ion-input>
+		    	</ion-input> -->
+		    	<ion-datetime displayFormat="MM/DD/YYYY" pickerFormat="DD MMMM YYYY" formControlName="pumpingStarted" ></ion-datetime>
 			</ion-item>
 			<ion-item> 
 				<ion-label >Pumping Stopped: </ion-label>
-				<ion-input formControlName="pumpingStopped" type="text" placeholder=""
+				<!-- <ion-input formControlName="pumpingStopped" type="text" placeholder=""
 		       			 [class.invalid]="!pumpingFormBuilder.controls.pumpingStopped.valid && pumpingFormBuilder.controls.pumpingStopped.dirty" disable> 
-		    	</ion-input>
+		    	</ion-input> -->
+		    	<ion-datetime displayFormat="MM/DD/YYYY" pickerFormat="DD MMMM YYYY" formControlName="pumpingStopped" ></ion-datetime>
 			</ion-item>
 			<ion-item> 
 				<ion-label >Bleaching: </ion-label>
@@ -181,9 +187,10 @@
 		    </ion-item>
 		    <ion-item> 
 		    	<ion-label >Stocking Date : </ion-label>
-				<ion-input formControlName="stockingDate" type="text" placeholder=""
+				<!-- <ion-input formControlName="stockingDate" type="text" placeholder=""
 		       			 [class.invalid]="!stockingFormBuilder.controls.stockingDate.valid && stockingFormBuilder.controls.stockingDate.dirty"> 
-		    	</ion-input>
+		    	</ion-input> -->
+		    	<ion-datetime displayFormat="MM/DD/YYYY" pickerFormat="DD MMMM YYYY" formControlName="stockingDate" ></ion-datetime>
 		    </ion-item>
 		    <ion-item> 
 		    	<ion-label >PL Type: </ion-label>
